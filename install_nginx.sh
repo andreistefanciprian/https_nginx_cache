@@ -28,6 +28,10 @@ sudo nginx -t
 sudo chown nginx:nginx /var/log/nginx/access.log
 sudo chown nginx:nginx /var/log/nginx/error.log
 
+# Disable Selinux to avoid 503 status code on http requests on port 80
+# and reboot machine
+sudo sed -i "s|SELINUX=enforcing|SELINUX=disabled|" /etc/sysconfig/selinux
+
 # Debugging commands
 # Verify NGINX is running on expected ports
 netstat -tapnl
