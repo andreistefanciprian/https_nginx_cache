@@ -18,8 +18,8 @@ sudo mkdir -p /etc/pki/nginx/private
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/nginx/private/server.key -out /etc/pki/nginx/server.crt
 
 # Create nginx caching folder
-sudo mkdir -p /tmp/nginx/cache
-sudo chown -r nginx:nginx /tmp/nginx
+sudo mkdir -p /var/lib/nginx/tmp/cache
+sudo chown -R nginx:nginx /var/lib/nginx/tmp/cache
 
 # Check nginx config syntax
 sudo nginx -t
