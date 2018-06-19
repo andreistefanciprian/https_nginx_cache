@@ -21,7 +21,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/nginx/
 sudo mkdir -p /var/lib/nginx/tmp/cache
 sudo chown -R nginx:nginx /var/lib/nginx/tmp/cache
 
-# Check nginx config syntax
+# Check nginx config syntax and reffered files in the nginx config
 sudo nginx -t
 
 # Logging nginx
