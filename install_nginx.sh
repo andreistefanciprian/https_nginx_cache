@@ -14,8 +14,8 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 
 # Generate SSl key and cert for HTTPS servers
-sudo mkdir -p /etc/pki/nginx/private
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/nginx/private/server.key -out /etc/pki/nginx/server.crt
+sudo mkdir -p /etc/pki/nginx
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/nginx/server.key -out /etc/pki/nginx/server.crt -subj "/C=GB/ST=Hertfordshire/L=Hemel Hempstead/O=Virgin WiFi/OU=Technology Solutions/CN=test"
 
 # Create nginx caching folder
 sudo mkdir -p /var/lib/nginx/tmp/cache
