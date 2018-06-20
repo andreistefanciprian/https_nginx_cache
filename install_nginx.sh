@@ -44,3 +44,13 @@ journalctl -xe
 
 # Check NGINX logs
 tail -f /var/log/nginx/error.log /var/log/nginx/access.log
+
+# Verify cert
+openssl x509 -in /etc/pki/nginx/server.crt -text -noout
+# Verify key
+openssl rsa -in /etc/pki/nginx/server.key -check
+# Verify csr if nay
+openssl req -text -noout -verify -in server.csr
+
+# Testing your SSL & TLS Version
+ openssl s_client -connect localhost:443
